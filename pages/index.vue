@@ -1,16 +1,22 @@
 <template>
-  <v-app>
-    <v-container>
-      <v-btn @click="showAlert('Hello World')">Click Me</v-btn>
-      <v-btn @click="showAppConfig()">Show App Config</v-btn>
-      <v-btn @click="showRuntimeConfig()">Show Runtime Config</v-btn>
-    </v-container>
-  </v-app>
+  <div>
+    <v-btn @click="showAlert('Hello World')" class="mr-4" variant="flat">Click Me</v-btn>
+    <v-btn @click="showAppConfig()" class="mr-4" variant="outlined">Show App Config</v-btn>
+    <v-btn @click="showRuntimeConfig()" class="mr-4" variant="outlined">Show Runtime Config</v-btn>
+    <v-btn @click="toggleTheme" variant="outlined">toggle theme</v-btn>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { useTheme } from 'vuetify'
+
 const appConfig = useAppConfig()
 const runtimeConfig = useRuntimeConfig()
+const theme = useTheme()
+
+function toggleTheme () {
+  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
+}
 
 function showAlert(message : string) {
   window.alert(message)
