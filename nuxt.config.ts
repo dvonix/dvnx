@@ -17,5 +17,19 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+  },
+  $production: {
+    runtimeConfig: {
+      public: {
+        username: "dvonix"
+      }
+    }
+  },
+  $development: {
+    runtimeConfig: {
+      public: {
+        username: "vnx"
+      }
+    }
   }
 })
