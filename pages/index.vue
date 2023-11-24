@@ -1,17 +1,14 @@
 <template>
-  <NuxtLayout>
-    <v-app>
-      <v-container>
-        <v-btn @click="showAlert('Hello World')">Click Me</v-btn>
-        <v-btn @click="showAppConfig()">Show App Config</v-btn>
-        <v-btn @click="showRuntimeConfig()">Show Runtime Config</v-btn>
-      </v-container>
-    </v-app>
-  </NuxtLayout>
+  <v-app>
+    <v-container>
+      <v-btn @click="showAlert('Hello World')">Click Me</v-btn>
+      <v-btn @click="showAppConfig()">Show App Config</v-btn>
+      <v-btn @click="showRuntimeConfig()">Show Runtime Config</v-btn>
+    </v-container>
+  </v-app>
 </template>
 
 <script setup lang="ts">
-
 const appConfig = useAppConfig()
 const runtimeConfig = useRuntimeConfig()
 
@@ -26,5 +23,4 @@ function showAppConfig() {
 function showRuntimeConfig() {
   window.alert(runtimeConfig.public.username)
 }
-
 </script>
