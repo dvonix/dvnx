@@ -14,8 +14,8 @@ export default defineNuxtPlugin((app) => {
                     dark: false,
                     colors: {
                         primary: colors.grey.darken4,
-                        background: colors.grey.lighten4,
-                        surface: colors.grey.lighten5
+                        background: colors.grey.lighten3,
+                        surface: colors.grey.lighten4
                     }
                 },
                 dark: {

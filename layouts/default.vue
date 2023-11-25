@@ -1,11 +1,7 @@
 <template>
   <v-app>
-    <v-app-bar density="compact" elevation="1">
-      <v-app-bar-nav-icon icon="mdi-home" color="primary"/>
-      <v-app-bar-title>
-        <p class="font-weight-bold text-primary">DVNX</p>
-      </v-app-bar-title>
-    </v-app-bar>
+    <loading-screen/>
+    <main-header></main-header>
     <v-main class="ma-4">
       <slot />
     </v-main>
@@ -14,6 +10,8 @@
 
 <script setup lang="ts">
 
+import MainHeader from "~/layouts/main-header.vue";
+import LoadingScreen from "~/components/loading-screen.vue";
 </script>
 
 <style scoped>
